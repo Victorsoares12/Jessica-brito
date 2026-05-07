@@ -1,0 +1,1187 @@
+/* Configurações Gerais e Fundo do Site */
+html {
+    scroll-behavior: smooth; /* Ativa rolagem suave para os links internos */
+}
+
+body {
+
+  background-image: url('z-img/fundo2.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Fundo diferente apenas para celulares */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Estilo e controle de tamanho da Logotipo principal */
+.logo {
+    max-width: 100%;
+    width: 350px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+/* Estilização do Header (Efeito Vidro / Glassmorphism) */
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 5%; 
+    margin: 20px 3%; /* Afasta das bordas para parecer um retângulo flutuante */
+    background: transparent;
+    backdrop-filter: none;
+    border-radius: 20px; /* Bordas arredondadas do retângulo */
+    box-shadow: none;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px; /* Espaço entre logo e menu */
+    margin-bottom: 20px;
+}
+
+/* Container que organiza a frase de impacto e a foto da profissional */
+.header-body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha a frase à esquerda */
+    position: relative;
+    padding: 10px 2%;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+/* Estilo dos textos principais no topo */
+.header-phrase {
+    max-width: 500px;
+    position: relative;
+    z-index: 2; /* Fica acima da foto */
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.0rem;
+    font-weight: 400;
+    color: #333;
+}
+
+.header-phrase p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+/* Lista de especialidades sob a frase principal */
+.specialties {
+    font-family: 'Great Vibes', cursive;
+    color: #363636;
+    font-weight: bold;
+    font-size: 2.2rem; /* Aumentado um pouco mais para dar maior destaque */
+}
+
+.specialties-list {
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.specialties-list li::before {
+    content: "• ";
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+/* Configuração da Foto Principal com efeito de transparência nas bordas */
+.hero-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem esticar */
+    object-position: center top; /* Garante que o topo da imagem (cabeça) não seja cortado */
+    z-index: 1; /* Fica atrás do texto */
+    /* Máscara que cria o efeito de desfoque/sumiço circular nas bordas */
+    mask-image: radial-gradient(circle, black 85%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 85%, transparent 100%);
+}
+
+/* Estilo da lista do menu */
+nav ul {
+    display: flex;
+    list-style: none; /* Remove os pontos/bullets da lista */
+    gap: 35px; /* Define o espaço entre cada item do menu */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Força letras maiúsculas */
+    padding: 8px 0;
+    border-bottom: 2px solid transparent; /* Linha invisível por padrão */
+    transition: all 0.3s ease;
+}
+
+/* Efeito visual ao passar o mouse nos links do menu */
+nav ul li a:hover {
+    color: #ff69b4;
+    border-bottom: 2px solid #ff69b4; /* Linha rosa no hover */
+}
+
+/* Botão Agendar Rosa */
+.btn-agendar {
+    background-color: #ff69b4;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-agendar:hover {
+    background-color: #e0559a;
+}
+
+/* Estilização da seção completa de Agendamento Online */
+.scheduling-section {
+    margin: 40px 3%;
+    padding: 40px 5%;
+    background: transparent;
+    backdrop-filter: none;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+/* Estilo dos campos de entrada de dados */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid rgba(247, 156, 188, 0.3);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #ff69b4;
+}
+
+/* Estilo para botões de ação final que levam ao WhatsApp */
+.btn-submit-whatsapp {
+    grid-column: 1 / -1;
+    background-color: #25d366;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit-whatsapp:hover {
+    background-color: #128c7e;
+    transform: scale(1.02);
+}
+
+/* --- Regras para dispositivos móveis --- */
+
+/* Tablets e Telas Médias */
+@media (max-width: 1024px) {
+    .logo { width: 280px; }
+    .header-phrase { font-size: 1.6rem; }
+    .header-phrase p { font-size: 1.4rem; }
+    .specialties { font-size: 1.8rem; }
+}
+
+/* Celulares Grandes e Tablets (Modo Retrato) */
+@media (max-width: 568px) {
+    .header-top {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .header-body {
+        flex-direction: column;
+        padding: 30px 5%;
+        min-height: auto;
+    }
+    .header-phrase {
+        max-width: 100%;
+        text-align: center;
+    }
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Celulares Pequenos */
+@media (max-width: 480px) {
+    header { margin: 10px 1%; padding: 15px 3%; }
+    .logo { width: 220px; }
+    nav ul { gap: 10px; }
+    nav ul li a { font-size: 0.8rem; padding: 6px 10px; }
+    .header-phrase { font-size: 1.5rem; }
+    .header-phrase p { font-size: 1.2rem; }
+    .specialties { font-size: 1.5rem; }
+    .specialties-list { font-size: 0.85rem; }
+}
+
+/* --- Estilo da Seção de Agendamento --- */
+.booking-section {
+  padding: 70px 6%; /* Mantém o padding */
+  background: transparent; /* Remove o fundo da seção */
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.booking-wrapper {
+  max-width: 1180px;
+  margin: auto;
+  background: transparent; /* Remove o fundo do wrapper */
+  border-radius: 18px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+}
+
+/* Card lateral com dicas e benefícios */
+.booking-info {
+  background: transparent; /* Remove o fundo do card de informações */
+  border-radius: 14px;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.booking-info h2 {
+  color: #ff5fae;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.line {
+  width: 55px;
+  height: 2px;
+  background: #ff5fae;
+  margin: 18px auto;
+}
+
+.booking-info p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+  margin-top: 26px;
+}
+
+.benefit span {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #ff5fae;
+  color: #ff5fae;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.benefit h4 {
+  margin: 0;
+  color: #555;
+  font-size: 17px;
+}
+
+.benefit p {
+  margin: 3px 0 0;
+  font-size: 14px;
+}
+
+.outline-btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 15px 38px;
+  border: 1px solid #ff5fae;
+  border-radius: 14px;
+  color: #ff5fae;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.booking-card {
+  background: transparent; /* Remove o fundo do card do formulário */
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+}
+
+/* Barra de progresso numerada */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.step {
+  text-align: center;
+  color: #777;
+  position: relative;
+}
+
+.step span {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.step.active span {
+  background: #ff5fae;
+  color: #fff;
+  border-color: #ff5fae;
+}
+
+.step small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.form-title {
+  display: block;
+  margin-bottom: 14px;
+  color: #555;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid #e6e6e6;
+  padding: 15px 18px;
+  border-radius: 10px;
+  margin-bottom: 11px;
+  cursor: pointer;
+}
+
+.service input {
+  accent-color: #ff5fae;
+}
+
+.service:has(input:checked) {
+  border-color: #ff9ac8;
+  background: #fff8fb;
+}
+
+.service-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+.service strong {
+  color: #ff5fae;
+  font-weight: 500;
+}
+
+/* Organização dos inputs de Data e Hora */
+.date-time {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.date-time input,
+.name-input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.button-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+/* Botão de navegação reversa */
+.prev-btn {
+  padding: 15px 28px;
+  border: 1px solid #ff5fae;
+  border-radius: 15px;
+  background: transparent;
+  color: #ff5fae;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prev-btn:hover {
+  background: #fff0f5;
+}
+
+.prev-btn span {
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Botão de navegação progressiva */
+.next-btn {
+  float: none; /* Removido para funcionar com flexbox */
+  margin-top: 0;
+  min-width: 210px;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ff5fae, #f63594);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.next-btn span {
+  font-size: 28px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+@media (max-width: 850px) {
+  .booking-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding: 20px 15px;
+    grid-template-columns: none;
+  }
+
+  .booking-wrapper::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .booking-wrapper::-webkit-scrollbar-thumb {
+    background: #ff5fae;
+    border-radius: 10px;
+  }
+
+  .booking-info,
+  .booking-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    padding: 28px 20px;
+    box-sizing: border-box;
+  }
+
+  .date-time {
+    grid-template-columns: 1fr;
+  }
+
+  .next-btn {
+    width: 100%;
+    float: none;
+  }
+}
+
+/* Controle de Fluxo das Abas do Agendamento */
+.form-step {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+.form-step.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.topicos-site {
+  padding: 80px 6%;
+  background: transparent;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.topico-card {
+  background: transparent;
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: none;
+  border: none;
+  transition: 0.3s;
+}
+
+.topico-card:hover {
+  transform: translateY(-8px);
+}
+
+.topico-card h2 {
+  color: #ff5fae;
+  font-size: 26px;
+  margin-bottom: 22px;
+  font-family: Georgia, serif;
+}
+
+.topico-card h3 {
+  color: #444;
+  font-size: 17px;
+  margin: 18px 0 6px;
+}
+
+.topico-card p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .topicos-site {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 40px 20px;
+    gap: 15px;
+  }
+
+  .topico-card {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+  }
+
+  .topicos-site::-webkit-scrollbar { height: 6px; }
+  .topicos-site::-webkit-scrollbar-thumb { background: #ff5fae; border-radius: 10px; }
+}
+.galeria-unhas {
+  padding: 80px 6%;
+  background: transparent;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.informacoes-projetos {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  text-align: center;
+  background: transparent;
+  padding: 20px;
+}
+
+.scroll-hint {
+  font-size: 1.05rem;
+  color: #ff5fae;
+  margin-bottom: 15px;
+  display: none; /* Escondido por padrão */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0.9;
+  font-weight: 500;
+  animation: pulsar-piscar 2s infinite ease-in-out;
+}
+
+@keyframes pulsar-piscar {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@media (max-width: 768px) {
+  .mobile-hint { display: flex; } /* Mostra no celular */
+}
+
+@media (min-width: 769px) {
+  .pc-hint { display: flex; } /* Mostra no PC */
+}
+
+.projetos-grid {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 30px;
+  padding: 10px 20px 20px;
+}
+
+.projetos-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.projetos-grid::-webkit-scrollbar-thumb {
+  background: #ff5fae;
+  border-radius: 10px;
+}
+
+.projeto-item {
+  flex: 0 0 280px;
+  scroll-snap-align: center;
+  padding: 10px;
+}
+
+.informacoes-projetos h2 {
+  color: #ff5fae;
+  font-size: 34px;
+  margin-bottom: 25px;
+  font-family: Georgia, serif;
+}
+
+.projeto-item h3 {
+  color: #444;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.projeto-item p {
+  color: #666;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* GALERIA */
+.galeria-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+}
+
+.galeria-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.galeria-scroll::-webkit-scrollbar-thumb {
+  background: #ff5fae;
+  border-radius: 30px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-rows: repeat(2, 270px);
+  grid-auto-flow: column;
+  grid-auto-columns: 220px;
+  gap: 22px;
+  width: max-content;
+}
+
+.galeria-grid img {
+  width: 220px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+  transition: 0.35s ease;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  .galeria-unhas {
+    padding: 55px 18px;
+  }
+
+  .informacoes-projetos {
+    padding: 28px 20px;
+  }
+
+  .informacoes-projetos h2 {
+    font-size: 28px;
+  }
+
+  .galeria-grid {
+    grid-template-rows: repeat(2, 220px);
+    grid-auto-columns: 180px;
+  }
+
+  .galeria-grid img {
+    width: 180px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .galeria-grid {
+    grid-template-rows: repeat(2, 190px);
+    grid-auto-columns: 160px;
+    gap: 15px;
+  }
+
+  .galeria-grid img {
+    width: 160px;
+    height: 190px;
+  }
+
+  .informacoes-projetos h2 {
+    font-size: 24px;
+  }
+
+  .informacoes-projetos h3 {
+    font-size: 18px;
+  }
+}
+
+/* Centraliza os projetos em telas grandes caso não ocupem toda a largura */
+@media (min-width: 1024px) {
+  .projetos-grid {
+    justify-content: center;
+  }
+}
+
+.info-importante {
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+}
+
+.info-importante p {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #444;
+  margin: 0;
+}
+
+/* Botão Flutuante Instagram */
+.btn-floating-instagram {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.btn-floating-instagram:hover {
+    transform: scale(1.1);
+}
+
+.feedback-section {
+  padding: 80px 6%;
+  background: transparent;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.feedback-header span {
+  background: #ffe1ee;
+  color: #ff4fa3;
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.feedback-header h2 {
+  font-family: Georgia, serif;
+  font-size: 48px;
+  color: #222;
+  margin: 22px 0 10px;
+}
+
+.feedback-header h2::first-letter {
+  color: #ff5fae;
+}
+
+.feedback-header p {
+  color: #666;
+  font-size: 18px;
+}
+
+.feedback-container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 35px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.feedback-form,
+.card-feedback,
+.media-feedback {
+  background: transparent;
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.feedback-form h3,
+.feedback-lista h3 {
+  color: #ff5fae;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.feedback-form p,
+.feedback-lista p {
+  color: #666;
+  margin-bottom: 22px;
+}
+
+.feedback-form label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 700;
+  color: #222;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e5cfd8;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.feedback-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.estrelas {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.estrelas input {
+  display: none;
+}
+
+.estrelas label {
+  font-size: 46px;
+  color: transparent;
+  -webkit-text-stroke: 2px #ff5fae;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0;
+}
+
+.estrelas input:checked ~ label,
+.estrelas label:hover,
+.estrelas label:hover ~ label {
+  color: #ff5fae;
+}
+
+.recomenda {
+  display: flex;
+  gap: 12px;
+}
+
+.recomenda input {
+  display: none;
+}
+
+.recomenda label,
+.btn-feedback {
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-feedback {
+  border: none;
+}
+
+.recomenda label {
+  padding: 13px 22px;
+  border-radius: 14px;
+  background: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+  margin: 0;
+}
+
+.recomenda input:checked + label {
+  background: #ff5fae;
+  color: #fff;
+  border-color: #ff5fae;
+}
+
+.btn-feedback {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff5fae, #f63594);
+  color: #fff;
+  font-size: 17px;
+}
+
+.aviso {
+  display: block;
+  text-align: center;
+  color: #777;
+  margin-top: 20px;
+}
+
+.cards-feedback {
+  display: flex; /* Mudado para flex em todos os dispositivos */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 20px;
+  padding: 10px 5px 25px;
+  margin-top: 10px;
+}
+
+/* Estilização da barra de rolagem para os feedbacks */
+.cards-feedback::-webkit-scrollbar {
+  height: 6px;
+}
+.cards-feedback::-webkit-scrollbar-thumb {
+  background: #ff5fae;
+  border-radius: 10px;
+}
+
+.card-feedback {
+  flex: 0 0 300px; /* Tamanho fixo do card para PC e Mobile */
+  scroll-snap-align: center;
+}
+
+.card-feedback h4 {
+  color: #222;
+  font-size: 18px;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #ff5fae;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.btn-delete:hover {
+  transform: scale(1.2);
+}
+
+.stars {
+  color: #ff5fae;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.card-feedback p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.card-feedback span {
+  display: inline-block;
+  background: #ffe1ee;
+  color: #ff4fa3;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.media-feedback {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.media-feedback strong {
+  color: #ff5fae;
+  font-size: 36px;
+  display: block;
+}
+
+.media-feedback p {
+  margin: 5px 0 0;
+}
+
+@media (max-width: 900px) {
+  .feedback-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 25px;
+    grid-template-columns: none;
+  }
+
+  .feedback-form,
+  .feedback-lista {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .feedback-header h2 {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .feedback-header span {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .feedback-header p {
+    width: 100%;
+  }
+
+  .feedback-section {
+    padding: 55px 18px;
+  }
+
+  .feedback-form,
+  .card-feedback,
+  .media-feedback {
+    padding: 24px 18px;
+  }
+
+  .recomenda {
+    flex-direction: column;
+  }
+
+  .estrelas label {
+    font-size: 38px;
+  }
+}
+
+
+.creditos-site{
+  width:100%;
+  text-align:center;
+  padding:15px 10px;
+  background: transparent;
+  color: rgba(83, 82, 83, 0.5); /* Texto sutil e transparente */
+  font-size: 10px; /* Tamanho pequeno */
+  font-family:Arial, sans-serif;
+  border-top:1px solid rgba(240, 179, 212, 0.3);
+  letter-spacing:0.5px;
+  margin-top: 40px;
+}
+
+.creditos-site strong{
+  color: rgba(75, 74, 74, 0.7);
+  font-weight:700;
+}
+
+/* Animação de Surgimento Suave (Scroll Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

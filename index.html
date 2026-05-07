@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessica Brito</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Importação de arquivos locais: Estilo e Comportamento -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK (Versão Compat para facilitar a integração) -->
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho: Contém Logo, Menu de Navegação e Botão de Ação -->
+    <header id="home" class="reveal">
+        <div class="header-top">
+            <!-- Logotipo da profissional -->
+            <img src="z-img/Logo.png" alt="logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre Mim</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <!-- Botão de atalho rápido para o formulário -->
+            <a href="#agendamento" class="btn-agendar">Agendar</a> 
+        </div>
+
+        <!-- Seção Hero: Frase de impacto e foto de fundo -->
+        <div class="header-body">
+            <div class="header-phrase">
+                <h1>Sua beleza merece o melhor cuidado.</h1>
+                <p>Agende uma avaliação e transforme seu visual com Jessica Brito.</p>
+                <!-- Lista de serviços oferecidos em destaque no topo -->
+                <div class="specialties">
+                    <span>Especialista em:</span>
+                    <ul class="specialties-list">
+                        <li>Postiça Realista</li>
+                        <li>Alongamento em Acrílico</li>
+                        <li>Manicure e Pedicure</li>
+                        <li>Design de Sobrancelhas</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Foto da Jessica posicionada à direita (estilizada via CSS) -->
+            <img src="z-img/Fundo.png" alt="Jessica" class="hero-photo">
+        </div>
+        
+    </header>
+
+    <!-- Seção de Agendamento Online -->
+    <section id="agendamento" class="booking-section reveal">
+  <p class="scroll-hint mobile-hint">Arraste para o lado para agendar ➔</p>
+  <div class="booking-wrapper">
+
+    <!-- Coluna Esquerda: Texto explicativo e ícones de benefícios -->
+    <div class="booking-info">
+      <h2>Agendamento Online</h2>
+      <div class="line"></div>
+      <p>
+        Escolha o serviço desejado, selecione a data e horário que melhor se encaixam
+        na sua rotina e faça seu agendamento de forma rápida e prática.
+      </p>
+
+      <!-- Bloco de benefício individual -->
+      <div class="benefit">
+        <span>🕒</span>
+        <div>
+          <h4>Prático e rápido</h4>
+          <p>Agende em poucos cliques.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <span>🛡️</span>
+        <div>
+          <h4>Mais segurança</h4>
+          <p>Seus dados protegidos.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <span>📅</span>
+        <div>
+          <h4>Lembretes</h4>
+          <p>Receba lembretes do seu agendamento.</p>
+        </div>
+      </div>
+
+      <!-- Botão que leva o foco para o início do formulário -->
+      <a href="#form-agendamento" class="outline-btn">📅 Agendar agora</a>
+    </div>
+
+    <!-- Coluna Direita: O formulário que muda conforme o clique do usuário -->
+    <div class="booking-card" id="form-agendamento">
+      <!-- Indicador de progresso (Bolinhas com números) -->
+      <div class="steps">
+        <div class="step active">
+          <span>1</span>
+          <small>Tipo</small>
+        </div>
+        <div class="step">
+          <span>2</span>
+          <small>Serviço</small>
+        </div>
+        <div class="step">
+          <span>3</span>
+          <small>Data e Hora</small>
+        </div>
+        <div class="step">
+          <span>4</span>
+          <small>Seus dados</small>
+        </div>
+        <div class="step">
+          <span>5</span>
+          <small>Confirmação</small>
+        </div>
+      </div>
+
+      <!-- Aba 1: Tipo de Atendimento -->
+      <div id="step-1" class="form-step active">
+        <label class="form-title">O que você deseja realizar?</label>
+        <label class="service">
+          <input type="radio" name="tipo" value="Novo Procedimento" checked>
+          <span>Novo Procedimento</span>
+        </label>
+        <label class="service">
+          <input type="radio" name="tipo" value="Manutenção">
+          <span>Manutenção</span>
+        </label>
+      </div>
+
+      <!-- Aba 2: Serviço -->
+      <div id="step-2" class="form-step">
+        <label class="form-title">Selecione até 2 serviços</label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Alongamento em Acrílico">
+            <img src="z-img/unha1.jpeg" alt="Alongamento" class="service-img">
+            <span>Alongamento em Acrílico</span>
+          </div>
+          <strong>R$ 90,00</strong>
+        </label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Postiça Realista">
+            <img src="z-img/unha2.jpeg" alt="Postiça" class="service-img">
+            <span>Postiça Realista</span>
+          </div>
+          <strong>R$ 50,00</strong>
+        </label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Banho de Acrílico">
+            <img src="z-img/unha3.jpeg" alt="Banho" class="service-img">
+            <span>Banho de Acrílico</span>
+          </div>
+          <strong>R$ 80,00</strong>
+        </label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Manutenção (Acrílico)">
+            <img src="z-img/unha4.jpeg" alt="Manutenção" class="service-img">
+            <span>Manutenção (Acrílico)</span>
+          </div>
+          <strong>R$ 75,00</strong>
+        </label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Manicure">
+            <img src="z-img/unha10.jpeg" alt="Manicure" class="service-img">
+            <span>Manicure</span>
+          </div>
+          <strong>R$ 28,00</strong>
+        </label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Pedicure">
+            <img src="z-img/unha12.jpeg" alt="Pedicure" class="service-img">
+            <span>Pedicure</span>
+          </div>
+          <strong>R$ 25,00</strong>
+        </label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Design + Henna">
+            <img src="z-img/unha11.jpeg" alt="Design Henna" class="service-img">
+            <span>Design + Henna</span>
+          </div>
+          <strong>R$ 30,00</strong>
+        </label>
+        <label class="service">
+          <div class="service-left">
+            <input type="checkbox" name="servico" value="Design Personalizado">
+            <img src="z-img/unha23.jpeg" alt="Design" class="service-img">
+            <span>Design Personalizado</span>
+          </div>
+          <strong>R$ 20,00</strong>
+        </label>
+      </div>
+
+      <!-- Aba 3: Data e Hora -->
+      <div id="step-3" class="form-step">
+        <label class="form-title">Escolha Data e Horário</label>
+        <!-- Inputs nativos do navegador para data e hora -->
+        <div class="date-time">
+          <input type="date" id="data">
+          <input type="time" id="hora">
+        </div>
+      </div>
+
+      <!-- Aba 4: Dados -->
+      <div id="step-4" class="form-step">
+        <label class="form-title">Informe seu nome</label>
+        <input class="name-input" type="text" id="nome" placeholder="Seu nome completo">
+      </div>
+
+      <!-- Aba 5: Confirmação -->
+      <div id="step-5" class="form-step">
+        <label class="form-title">Confirme seu Agendamento</label>
+        <!-- Este div é preenchido dinamicamente pelo arquivo script.js -->
+        <div id="summary" style="text-align: left; padding: 15px; background: #fff8fb; border-radius: 10px; color: #555; line-height: 1.8;"></div>
+      </div>
+
+      <!-- Botões de navegação do formulário -->
+      <div class="button-actions">
+        <!-- O botão voltar inicia escondido (style display none) -->
+        <button type="button" onclick="prevStep()" class="prev-btn" id="prevBtn" style="display: none;">
+          <span>‹</span> Voltar
+        </button>
+        <button type="button" onclick="nextStep()" class="next-btn" id="nextBtn">
+          Próximo <span>›</span>
+        </button>
+      </div>
+    </div>
+    </div>
+    
+<section id="projects" class="galeria-unhas reveal">
+
+  <div class="informacoes-projetos">
+    <h2>📸 Projetos</h2>
+    <p class="scroll-hint mobile-hint">Arraste para o lado para ver as informações ➔</p>
+    <div class="projetos-grid">
+      <div class="projeto-item">
+        <h3>Alongamento em gel</h3>
+        <p>Acabamento moderno, resistente e elegante.</p>
+      </div>
+
+      <div class="projeto-item">
+        <h3>Nail art personalizada</h3>
+        <p>Decorações exclusivas feitas de acordo com o estilo da cliente.</p>
+      </div>
+
+      <div class="projeto-item">
+        <h3>Manutenção profissional</h3>
+        <p>Cuidados essenciais para manter as unhas sempre bonitas e saudáveis.</p>
+      </div>
+    </div>
+  </div>
+    <div class="info-importante">
+      <p>Confira alguns dos meus trabalhos mais recentes e inspire-se para o seu próximo visual.</p>
+    </div>
+  <p class="scroll-hint pc-hint">Clique e arraste para ver as fotos ➔</p>
+  <div class="galeria-scroll">
+    <div class="galeria-grid">
+
+      <img src="z-img/unha1.jpeg">
+      <img src="z-img/unha2.jpeg">
+      <img src="z-img/unha3.jpeg">
+      <img src="z-img/unha4.jpeg">
+      <img src="z-img/unha5.jpeg">
+      <img src="z-img/unha6.jpeg">
+      <img src="z-img/unha7.jpeg">
+      <img src="z-img/unha8.jpeg">
+      <img src="z-img/unha9.jpeg">
+      <img src="z-img/unha10.jpeg">
+      <img src="z-img/unha11.jpeg">
+      <img src="z-img/unha12.jpeg">
+      <img src="z-img/unha13.jpeg">
+      <img src="z-img/unha14.jpeg">     
+
+      <img src="z-img/unha15.jpeg">
+      <img src="z-img/unha16.jpeg">
+      <img src="z-img/unha17.jpeg">
+      <img src="z-img/unha18.jpeg">
+      <img src="z-img/unha19.jpeg">
+      <img src="z-img/unha20.jpeg">
+      <img src="z-img/unha21.jpeg">
+      <img src="z-img/unha22.jpeg">
+      <img src="z-img/unha23.jpeg">
+      <img src="z-img/unha24.jpeg">
+      <img src="z-img/unha25.jpeg">
+      <img src="z-img/unha26.jpeg">
+
+    </div>
+  </div>
+
+</section>
+
+<section class="topicos-site reveal">
+  <p class="scroll-hint mobile-hint">Arraste para o lado para ver mais ➔</p>
+
+  <!-- Card de Início -->
+  <div class="topico-card">
+    <h2>✨ Início</h2>
+    <h3>Atendimento profissional</h3>
+    <p>Serviços realizados com qualidade, cuidado e atenção aos detalhes.</p>
+
+    <h3>Técnicas modernas</h3>
+    <p>Aplicação de técnicas atualizadas para resultados sofisticados e duradouros.</p>
+
+    <h3>Atendimento personalizado</h3>
+    <p>Cada cliente recebe um atendimento único, pensado para valorizar sua beleza natural.</p>
+  </div>
+
+  <div class="topico-card" id="about">
+    <h2>💖 Sobre mim</h2>
+    <h3>Experiência e dedicação</h3>
+    <p>Profissional dedicada à área da beleza com foco em excelência e aperfeiçoamento constante.</p>
+
+    <h3>Qualidade nos serviços</h3>
+    <p>Utilização de produtos de alta qualidade e técnicas modernas.</p>
+
+    <h3>Resultados sofisticados</h3>
+    <p>Serviços realizados com precisão para garantir um acabamento elegante e profissional.</p>
+  </div>
+
+  <div class="topico-card" id="contact">
+    <h2>📞 Contato</h2>
+    <h3>Agendamentos</h3>
+    <p>Atendimento realizado mediante horário marcado.</p>
+
+    <h3>WhatsApp</h3>
+    <p>(85) 99999-0000</p>
+
+    <h3>Localização</h3>
+    <p>Fortaleza - CE</p>
+  </div>
+</section>
+
+<!-- Seção de Feedback -->
+<section class="feedback-section reveal" id="feedback">
+  <div class="feedback-header">
+    <span>Sua opinião é importante</span>
+    <h2>💬 Feedback das Clientes</h2>
+    <p>Conte como foi sua experiência e ajude outras clientes a conhecerem nosso trabalho.</p>
+  </div>
+
+  <div class="feedback-container">
+    <div class="feedback-form">
+      <h3>✏️ Deixe seu Feedback</h3>
+      <p>Sua opinião faz toda a diferença!</p>
+      <form id="feedbackForm">
+        <input type="text" id="nomeFeedback" placeholder="Seu nome" required>
+        <textarea id="mensagemFeedback" placeholder="Digite seu feedback" required></textarea>
+        <select id="estrelasFeedback" required>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="1">⭐</option>
+        </select>
+        <button type="submit" class="btn-feedback">Enviar feedback</button>
+      </form>
+      <small class="aviso">🔒 Seu feedback é público e pode ajudar outras clientes.</small>
+    </div>
+
+    <div class="feedback-lista">
+      <h3>⭐ O que nossas clientes dizem</h3>
+      <p>Veja alguns feedbacks de quem já confiou no nosso trabalho.</p>
+      <div id="listaFeedbacks" class="cards-feedback"></div>
+
+      <div class="media-feedback" id="media-area">
+        <strong id="nota-media">5.0 ★★★★★</strong>
+        <p>Avaliação das clientes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="creditos-site">
+  © 2026 Jessica Brito Nails — Todos os direitos reservados. <br>
+  Desenvolvido por <strong>Victor Soares</strong>
+</div>
+</body>
+</html>
