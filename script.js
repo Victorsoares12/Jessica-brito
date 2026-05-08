@@ -124,7 +124,7 @@ function agendarWhatsApp() {
   const hora = document.getElementById("hora").value;
   const selectedNodes = document.querySelectorAll('input[name="servico"]:checked');
   const servico = Array.from(selectedNodes).map(cb => cb.value).join(', ');
-  const telefone = "5585996552807"; // Número da Jéssica com código do país e DDD
+  const telefone = "558585596825"; // Número da Jéssica atualizado
   
   // Monta o link da API do WhatsApp com a mensagem pré-preenchida codificada
   const mensagem = `Olá Jéssica! Gostaria de agendar um horário.%0A%0A*Nome:* ${nome}%0A*Atendimento:* ${tipo}%0A*Serviço:* ${servico}%0A*Data:* ${data}%0A*Horário:* ${hora}h`;
